@@ -3,7 +3,7 @@
 ![cover.png](cover.png)
 
 ## Downloading
-`$ git clone https://github.com/jonysthil/test-docker-laravel.git`
+`$ git clone https://github.com/jonysthil/test-docker-laravel-mysql-phpmyadmin.git`
 
 ## Installation
 
