@@ -1,0 +1,34 @@
+version: '3'
+#Containers must be defined
+services:
+
+    apache:
+        build: .
+        image: name-apache
+        container_name: name-apache
+        restart: unless-stopped
+        volumes:
+            - ./www:/var/www/html/
+        ports:
+            - 80:80
+        networks:
+            - name_network
+
+    mysql:
+        image: mariadb:10.3
+        container_name: name-mysql
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_HOST: '%'
+            MYSQL_ROOT_PASSWORD: 123456
+        volumes:
+            - ./mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+        networks:
+            - name_network
+
+#We define the name of the network.
+networks:
+    name_network:
+        driver: bridge
